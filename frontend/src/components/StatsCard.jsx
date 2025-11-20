@@ -1,14 +1,6 @@
 import { Card, CardContent } from '@/components/ui/card';
-import { LucideIcon } from 'lucide-react';
 
-interface StatsCardProps {
-  title: string;
-  value: number;
-  icon: LucideIcon;
-  gradient: 'field' | 'sky' | 'harvest' | 'soil';
-}
-
-export const StatsCard = ({ title, value, icon: Icon, gradient }: StatsCardProps) => {
+export const StatsCard = ({ title, value, icon: Icon, gradient }) => {
   const gradientClasses = {
     field: 'bg-gradient-field',
     sky: 'bg-gradient-sky',
