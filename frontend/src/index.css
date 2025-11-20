@@ -1,75 +1,111 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 body {
     margin: 0;
-    font-family:
-        -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-        "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-        sans-serif;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-    font-family:
-        source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
 }
 
 @layer base {
     :root {
-        --background: 0 0% 100%;
-        --foreground: 0 0% 3.9%;
+        /* Agricultural Earth Tone Color System */
+        --background: 40 20% 97%;
+        --foreground: 25 30% 15%;
+        
+        /* Primary: Rich Forest Green (Growth & Vitality) */
+        --primary: 135 45% 38%;
+        --primary-foreground: 0 0% 100%;
+        --primary-light: 135 40% 50%;
+        --primary-dark: 135 50% 28%;
+        
+        /* Secondary: Fertile Soil Brown */
+        --secondary: 25 45% 45%;
+        --secondary-foreground: 0 0% 100%;
+        --secondary-light: 25 40% 60%;
+        
+        /* Accent: Sky Blue (Water & Growth) */
+        --accent: 200 70% 55%;
+        --accent-foreground: 0 0% 100%;
+        --accent-light: 200 60% 70%;
+        
+        /* Harvest Gold */
+        --harvest: 42 85% 55%;
+        --harvest-foreground: 25 30% 15%;
+        
+        /* Status Colors */
+        --success: 135 60% 45%;
+        --success-foreground: 0 0% 100%;
+        --warning: 38 92% 50%;
+        --warning-foreground: 25 30% 15%;
+        --destructive: 0 72% 51%;
+        --destructive-foreground: 0 0% 100%;
+        
+        /* UI Elements */
         --card: 0 0% 100%;
-        --card-foreground: 0 0% 3.9%;
+        --card-foreground: 25 30% 15%;
         --popover: 0 0% 100%;
-        --popover-foreground: 0 0% 3.9%;
-        --primary: 0 0% 9%;
-        --primary-foreground: 0 0% 98%;
-        --secondary: 0 0% 96.1%;
-        --secondary-foreground: 0 0% 9%;
-        --muted: 0 0% 96.1%;
-        --muted-foreground: 0 0% 45.1%;
-        --accent: 0 0% 96.1%;
-        --accent-foreground: 0 0% 9%;
-        --destructive: 0 84.2% 60.2%;
-        --destructive-foreground: 0 0% 98%;
-        --border: 0 0% 89.8%;
-        --input: 0 0% 89.8%;
-        --ring: 0 0% 3.9%;
-        --chart-1: 12 76% 61%;
-        --chart-2: 173 58% 39%;
-        --chart-3: 197 37% 24%;
-        --chart-4: 43 74% 66%;
-        --chart-5: 27 87% 67%;
-        --radius: 0.5rem;
+        --popover-foreground: 25 30% 15%;
+        --muted: 40 15% 94%;
+        --muted-foreground: 25 15% 45%;
+        --border: 40 20% 88%;
+        --input: 40 20% 88%;
+        --ring: 135 45% 38%;
+        
+        /* Chart Colors */
+        --chart-1: 135 45% 38%;
+        --chart-2: 200 70% 55%;
+        --chart-3: 42 85% 55%;
+        --chart-4: 25 45% 45%;
+        --chart-5: 0 72% 51%;
+        
+        --radius: 0.75rem;
+        
+        /* Custom Agricultural Gradients */
+        --gradient-field: linear-gradient(135deg, hsl(135 45% 38%) 0%, hsl(135 40% 50%) 100%);
+        --gradient-soil: linear-gradient(135deg, hsl(25 45% 45%) 0%, hsl(25 40% 60%) 100%);
+        --gradient-sky: linear-gradient(135deg, hsl(200 70% 55%) 0%, hsl(200 60% 70%) 100%);
+        --gradient-harvest: linear-gradient(135deg, hsl(42 85% 55%) 0%, hsl(42 80% 65%) 100%);
+        
+        /* Shadows */
+        --shadow-sm: 0 1px 2px 0 hsl(25 30% 15% / 0.05);
+        --shadow-md: 0 4px 6px -1px hsl(25 30% 15% / 0.1), 0 2px 4px -2px hsl(25 30% 15% / 0.1);
+        --shadow-lg: 0 10px 15px -3px hsl(25 30% 15% / 0.1), 0 4px 6px -4px hsl(25 30% 15% / 0.1);
+        --shadow-xl: 0 20px 25px -5px hsl(25 30% 15% / 0.1), 0 8px 10px -6px hsl(25 30% 15% / 0.1);
+        
+        /* Transitions */
+        --transition-smooth: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        --transition-bounce: 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
     }
+    
     .dark {
-        --background: 0 0% 3.9%;
-        --foreground: 0 0% 98%;
-        --card: 0 0% 3.9%;
-        --card-foreground: 0 0% 98%;
-        --popover: 0 0% 3.9%;
-        --popover-foreground: 0 0% 98%;
-        --primary: 0 0% 98%;
-        --primary-foreground: 0 0% 9%;
-        --secondary: 0 0% 14.9%;
-        --secondary-foreground: 0 0% 98%;
-        --muted: 0 0% 14.9%;
-        --muted-foreground: 0 0% 63.9%;
-        --accent: 0 0% 14.9%;
-        --accent-foreground: 0 0% 98%;
-        --destructive: 0 62.8% 30.6%;
-        --destructive-foreground: 0 0% 98%;
-        --border: 0 0% 14.9%;
-        --input: 0 0% 14.9%;
-        --ring: 0 0% 83.1%;
-        --chart-1: 220 70% 50%;
-        --chart-2: 160 60% 45%;
-        --chart-3: 30 80% 55%;
-        --chart-4: 280 65% 60%;
-        --chart-5: 340 75% 55%;
+        --background: 25 30% 10%;
+        --foreground: 40 20% 95%;
+        --card: 25 25% 12%;
+        --card-foreground: 40 20% 95%;
+        --popover: 25 25% 12%;
+        --popover-foreground: 40 20% 95%;
+        --primary: 135 45% 45%;
+        --primary-foreground: 0 0% 100%;
+        --secondary: 25 40% 35%;
+        --secondary-foreground: 0 0% 100%;
+        --muted: 25 20% 18%;
+        --muted-foreground: 40 15% 60%;
+        --accent: 200 65% 50%;
+        --accent-foreground: 0 0% 100%;
+        --destructive: 0 62% 45%;
+        --destructive-foreground: 0 0% 100%;
+        --border: 25 20% 22%;
+        --input: 25 20% 22%;
+        --ring: 135 45% 45%;
     }
 }
 
@@ -79,6 +115,70 @@ code {
     }
     body {
         @apply bg-background text-foreground;
+    }
+    
+    h1, h2, h3, h4, h5, h6 {
+        font-family: 'Space Grotesk', 'Inter', sans-serif;
+    }
+}
+
+@layer components {
+    /* Gradient Backgrounds */
+    .bg-gradient-field {
+        background: var(--gradient-field);
+    }
+    .bg-gradient-soil {
+        background: var(--gradient-soil);
+    }
+    .bg-gradient-sky {
+        background: var(--gradient-sky);
+    }
+    .bg-gradient-harvest {
+        background: var(--gradient-harvest);
+    }
+    
+    /* Custom Shadows */
+    .shadow-custom-sm {
+        box-shadow: var(--shadow-sm);
+    }
+    .shadow-custom-md {
+        box-shadow: var(--shadow-md);
+    }
+    .shadow-custom-lg {
+        box-shadow: var(--shadow-lg);
+    }
+    .shadow-custom-xl {
+        box-shadow: var(--shadow-xl);
+    }
+    
+    /* Smooth Transitions */
+    .transition-smooth {
+        transition: var(--transition-smooth);
+    }
+    
+    /* Upload Area Styles */
+    .upload-area {
+        @apply border-2 border-dashed border-border rounded-lg p-8 text-center transition-smooth hover:border-primary hover:bg-muted/50;
+    }
+    
+    /* Loading Animation */
+    @keyframes spin {
+        from { transform: rotate(0deg); }
+        to { transform: rotate(360deg); }
+    }
+    
+    .animate-spin {
+        animation: spin 1s linear infinite;
+    }
+    
+    /* Fade In Animation */
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(10px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+    
+    .animate-fade-in {
+        animation: fadeIn 0.5s ease-out;
     }
 }
 
